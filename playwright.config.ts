@@ -19,7 +19,10 @@ export default defineConfig({
     screenshot: "on",
     video: "retain-on-failure",
   },
-  reporter: [["html", { open: "never" }]],
+  reporter: [
+    ["html", { open: "never" }],
+    ["junit", { outputFile: "test-results/junit-results.xml" }],
+  ],
   projects: [
     {
       name: "Google Chrome",
