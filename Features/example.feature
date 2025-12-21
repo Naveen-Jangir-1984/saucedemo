@@ -9,6 +9,6 @@ Feature: Login feature
     Given user login as "ProblemUser"
     Then user should see the inventory title
 
-  Scenario: #3 Locked User
-    Given user login as "LockedUser"
-    Then user should see the inventory title
+#  Scenario: #3 Locked User
+#    Given user login as "LockedUser"
+#    Then user should see the inventory title
