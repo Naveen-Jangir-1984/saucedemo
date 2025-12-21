@@ -13,13 +13,18 @@ steps:
   - script: |
       npm install
       npx playwright install
+    displayName: "Install Dependencies"
+
+  - script: |
       npm test
-    displayName: "Install and Test"
+    displayName: "Test with Playwright"
 
   - task: PublishTestResults@2
     inputs:
-      testResultsFormat: "VSTest"
-      testResultsFiles: "**/*.trx"
+      testResultsFormat: "JUnit"
+      testResultsFiles: "**/junit-results.xml"
+      searchFolder: "$(System.DefaultWorkingDirectory)"
+      mergeTestResults: true
       failTaskOnFailedTests: false
     displayName: Publish Test Results
 
@@ -27,4 +32,4 @@ steps:
       if [ "$(TestResultFailures)" != "0" ]; then
         echo "##vso[task.complete result=SucceededWithIssues;]"
       fi
-    displayName: Set Job Atatus to Amber if failures
+    displayName: Set Job Status to Amber on Failures
