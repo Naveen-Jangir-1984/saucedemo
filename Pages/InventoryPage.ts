@@ -1,12 +1,11 @@
-import { Page } from '@playwright/test';
+import { Page } from "@playwright/test";
 
 export class InventoryPage {
-
-	readonly pageTitle;
+  readonly pageTitle;
 
   constructor(private page: Page) {
-		this.page = page;
-		this.pageTitle = this.page.locator(`.title`);
+    this.page = page;
+    this.pageTitle = this.page.locator(`.title`);
   }
 
   async isPageTitleDisplayed() {

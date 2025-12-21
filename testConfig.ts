@@ -6,12 +6,12 @@ export interface User {
   password: string;
   description?: string;
   role?: string;
-};
+}
 
 export interface ConfigType {
   baseUrl: string;
   users: { [key: string]: User };
-};
+}
 
 const qaConfig: ConfigType = {
   baseUrl: qaUrl,
@@ -20,8 +20,8 @@ const qaConfig: ConfigType = {
       role: "Tester",
       username: "standard_user",
       password: "secret_sauce",
-    }
-  }
+    },
+  },
 };
 
 const stgConfig: ConfigType = {
@@ -41,8 +41,8 @@ const stgConfig: ConfigType = {
       role: "Tester",
       username: "locked_out_user",
       password: "secret_sauce",
-    }
-  }
+    },
+  },
 };
 
 const environment = process.env.TEST_ENV || "stg";

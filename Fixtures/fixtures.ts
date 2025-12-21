@@ -1,6 +1,6 @@
-import { test as base, createBdd } from 'playwright-bdd';
-import { LoginPage } from '../Pages/LoginPage';
-import { InventoryPage } from '../Pages/InventoryPage';
+import { test as base, createBdd } from "playwright-bdd";
+import { LoginPage } from "../Pages/LoginPage";
+import { InventoryPage } from "../Pages/InventoryPage";
 
 type typePage = {
   loginPage: LoginPage;
