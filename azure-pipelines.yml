@@ -17,10 +17,10 @@ steps:
     displayName: "Install and Test"
 
   - task: PublishTestResults@2
-    displayName: Publish Test Results
     inputs:
       testResultsFormat: "JUnit"
       testResultsFiles: "**/junit-results.xml"
       searchFolder: "$(System.DefaultWorkingDirectory)"
       mergeTestResults: true
       failTaskOnFailedTests: false
+    displayName: Publish Test Results
