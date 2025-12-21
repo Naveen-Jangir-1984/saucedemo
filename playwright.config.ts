@@ -21,7 +21,7 @@ export default defineConfig({
   },
   reporter: [
     ["html", { open: "never" }],
-    ["junit", { outputFile: "test-results/junit-results.xml" }],
+    ["trx", { outputFile: "test-results/playwright.trx" }],
   ],
   projects: [
     {
