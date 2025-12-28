@@ -1,14 +1,13 @@
-Feature: Login feature
+Feature: Login 2 feature
 
-  @test
-  Scenario: #1 Standard User
+  Scenario: #21 Standard User
     Given user login as "StandardUser"
     Then user should see the inventory title
 
-  Scenario: #2 Problem User
+  Scenario: #22 Problem User
     Given user login as "ProblemUser"
     Then user should see the inventory title
 
-  Scenario: #3 Locked User
+  Scenario: #23 Locked User
     Given user login as "LockedUser"
     Then user should see the inventory title
