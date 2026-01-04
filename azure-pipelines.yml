@@ -33,4 +33,4 @@ steps:
     inputs:
       targetPath: test-results
       artifact: junit-xml
-    displayName: Publish JUnit XML
+    displayName: Publish Downloadable JUnit XML
