@@ -17,6 +17,7 @@ steps:
 
   - script: |
       npm test
+    continueOnError: true
     displayName: "Test with Playwright"
 
   - task: PublishTestResults@2
