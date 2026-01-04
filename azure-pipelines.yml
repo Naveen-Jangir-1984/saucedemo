@@ -29,12 +29,6 @@ steps:
       failTaskOnFailedTests: false
     displayName: Publish Test Results
 
-  - script: |
-      if [ "$(TestResultFailures)" != "0" ]; then
-        echo "##vso[task.complete result=SucceededWithIssues;]"
-      fi
-    displayName: Set Job Status to Amber on Failures
-
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: test-results
