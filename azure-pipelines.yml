@@ -23,7 +23,7 @@ steps:
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: "JUnit"
-      testResultsFiles: "**/junit-results.xml"
+      testResultsFiles: "**/junit.xml"
       searchFolder: "$(System.DefaultWorkingDirectory)"
       mergeTestResults: true
       failTaskOnFailedTests: false
@@ -34,3 +34,9 @@ steps:
       targetPath: test-results
       artifact: junit-xml
     displayName: Publish Downloadable JUnit XML
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      path: "$(System.DefaultWorkingDirectory)/playwright-report"
+      artifact: html-report
+    displayName: Publish Downloadable HTML report
