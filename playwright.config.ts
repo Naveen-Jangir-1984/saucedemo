@@ -21,7 +21,7 @@ export default defineConfig({
   },
   reporter: [
     ["html", { open: "never" }],
-    ["junit", { outputFile: "test-results/junit-results.xml" }],
+    ["junit", { outputFile: "test-results/junit.xml" }],
   ],
   projects: [
     {
