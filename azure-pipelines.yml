@@ -25,7 +25,7 @@ steps:
       targetPath: "$(System.DefaultWorkingDirectory)/junit.xml"
       artifact: junit-report
     condition: always()
-    displayName: "Publish JUnit XML"
+    displayName: "Publish JUnit Report"
 
   - task: PublishPipelineArtifact@1
     inputs:
