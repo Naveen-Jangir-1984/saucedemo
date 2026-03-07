@@ -1,45 +1,44 @@
-trigger:
-  name: CI
+name: CI
 
-  on:
-    push:
-      branches:
-        - main
-    pull_request:
-      branches:
-        - main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
-  jobs:
-    build:
-      runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-        - name: Set up Node.js
-          uses: actions/setup-node@v2
-          with:
-            node-version: "20"
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
 
-        - name: Install Dependencies
-          run: |
-            npm install
-            npx playwright install
+      - name: Install Dependencies
+        run: |
+          npm install
+          npx playwright install
 
-        - name: Test with Playwright
-          run: npm test
-          continue-on-error: true
+      - name: Test with Playwright
+        run: npm test
+        continue-on-error: true
 
-        - name: Publish JUnit Report
-          if: always()
-          uses: actions/upload-artifact@v2
-          with:
-            name: junit-report
-            path: junit.xml
+      - name: Publish JUnit Report
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: junit-report
+          path: junit.xml
 
-        - name: Publish HTML Report
-          uses: actions/upload-artifact@v2
-          with:
-            name: html-report
-            path: playwright-report
+      - name: Publish HTML Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: html-report
+          path: playwright-report
