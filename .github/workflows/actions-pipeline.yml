@@ -32,20 +32,13 @@ jobs:
 
       - name: Publish JUnit Report
         if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: junit-report
-          path: junit.xml
-
-      - name: Publish JUnit Report
-        if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: junit-report
           path: junit.xml
 
       - name: Publish HTML Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: html-report
           path: playwright-report
