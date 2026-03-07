@@ -1,6 +1,9 @@
 name: Saucedemo CI Pipeline
 
-on: {}
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
