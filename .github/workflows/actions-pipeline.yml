@@ -1,4 +1,4 @@
-name: CI
+name: Saucedemo CI Pipeline
 
 on:
   push:
@@ -37,8 +37,15 @@ jobs:
           name: junit-report
           path: junit.xml
 
+      - name: Publish JUnit Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: junit-report
+          path: junit.xml
+
       - name: Publish HTML Report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: html-report
           path: playwright-report
