@@ -27,33 +27,11 @@ jobs:
         run: npm test
         continue-on-error: true
 
-      - name: Upload JUnit Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: junit-report
-          path: junit.xml
-
-      - name: Upload HTML Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: html-report
-          path: playwright-report
-
-      - name: Publish Playwright Report Link
-        if: always()
-        run: |
-          mkdir -p site/${{ github.run_id }}
-          cp -r playwright-report/* site/${{ github.run_id }}/
-          # Make sure index exists:
-          test -f site/${{ github.run_id }}/index.html
-
       - name: Upload Pages artifact
         if: always()
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
-          path: site
+          path: playwright-report
 
   deploy-pages:
     needs: build
@@ -65,10 +43,7 @@ jobs:
       pages: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          folder: playwright-report
