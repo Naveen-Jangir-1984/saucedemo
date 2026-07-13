@@ -16,7 +16,7 @@ steps:
     displayName: "Install Dependencies"
 
   - script: |
-      npm test
+      npx playwright test
     continueOnError: true
     displayName: "Test with Playwright"
 
