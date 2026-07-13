@@ -2,7 +2,7 @@ trigger:
   - none
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: VINOD
 
 steps:
   # - task: NodeTool@0
