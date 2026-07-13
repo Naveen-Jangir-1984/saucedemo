@@ -2,7 +2,7 @@ trigger:
   - none
 
 pool:
-  vmImage: VINOD
+  name: VINOD
 
 steps:
   # - task: NodeTool@0
