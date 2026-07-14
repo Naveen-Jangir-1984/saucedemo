@@ -1,8 +1,8 @@
 trigger:
   - none
 
-runs-on:
-  name: self-hosted
+pool:
+  name: VINOD
 
 steps:
   # - task: NodeTool@0
