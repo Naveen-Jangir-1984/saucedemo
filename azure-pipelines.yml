@@ -10,7 +10,7 @@ steps:
   #     versionSpec: "20.x"
   #   displayName: "Install Node.js"
 
-  - script: |
+  - powershell: |
       if (Test-Path node_modules) { Remove-Item -Recurse -Force node_modules }
       if (Test-Path package-lock.json) { npm ci } else { npm install }
       npx playwright install
