@@ -1,8 +1,8 @@
 trigger:
   - none
 
-pool:
-  name: VINOD
+runs-on:
+  name: self-hosted
 
 steps:
   # - task: NodeTool@0
@@ -16,6 +16,7 @@ steps:
     displayName: "Install Dependencies"
 
   - script: |
+      npx bddgen
       npx playwright test
     continueOnError: true
     displayName: "Test with Playwright"
