@@ -11,8 +11,8 @@
   "description": "",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.54.2",
-    "playwright-bdd": "^8.3.1",
+    "@playwright/test": "^1.61.1",
+    "playwright-bdd": "^9.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }
