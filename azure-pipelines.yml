@@ -2,13 +2,13 @@ trigger:
   - none
 
 pool:
-  vmImage: ubuntu-latest
+  name: VINOD
 
 steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: "20.x"
-    displayName: "Install Node.js"
+  # - task: NodeTool@0
+  #   inputs:
+  #     versionSpec: "20.x"
+  #   displayName: "Install Node.js"
 
   - script: |
       npm install
@@ -16,7 +16,8 @@ steps:
     displayName: "Install Dependencies"
 
   - script: |
-      npm test
+      npx bddgen
+      npx playwright test
     continueOnError: true
     displayName: "Test with Playwright"
 
